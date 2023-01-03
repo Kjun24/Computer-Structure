@@ -1,0 +1,56 @@
+if (file_1.is_open()){
+        while (!file_1.eof()){
+            string str;
+            getline(file_1, str);
+            if (position == 0){data_size = hex_to_dec(stoi(str.substr(2,str.length())))/4; cout << data_size<<endl;} //data size 
+            else if (position == 1){text_size = hex_to_dec(stoi(str.substr(2,str.length())))/4; cout << text_size<<endl;} //text size
+            else if (position >1 && position < data_size+2 ){
+                string data_st = hex_to_bi(str);
+                cout<<data_st<<endl;
+                detect_oper(data_st);
+                r_type_oper(data_st);
+                i_type_oper(data_st);
+            }// data section --> check operator from codes
+            else if (position > data_size+1){
+                string text_st = hex_to_bi(str);
+                cout<<text_st<<endl;
+            }// text section
+            position++;
+            if (position == text_size+data_size+2){break;} //line check done
+            }
+
+    }
+00001 10000 01000 00000 00000 00001 01
+00001 00000 01000 00000 00000 00011 00
+00100 10001 00001 01111 11111 11111 11
+0010010001000010 1111 1111 1111 1111
+
+
+0x3c041000
+0x3484000c
+for(int i=0; i<32; i++){ stringstream ss; ss<< std::hex << Reg[i]; cout<<ss.str()<<endl;};
+    cout<<"reg2"<<Reg[2]<<endl;
+
+
+
+int hex_to_dec(int hexnum){
+    stringstream stream;
+    int decnum;
+    stream << hexnum;
+    stream >> std::hex >> decnum;
+    return decnum;
+}
+
+
+
+
+
+
+
+if (bits[0] == 1){
+        decimal = stoi(bits.substr(1,15),nullptr,2)-pow(2,15);
+    }
+    else {
+        decimal = stoi(bits,nullptr,2);
+    }
+

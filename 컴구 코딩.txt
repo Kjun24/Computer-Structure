@@ -1,0 +1,37 @@
+int R_type :: get_oper(string input){
+    if (input=="addu"){return 33;}
+    else if (input == "and"){return 36;}
+    else if (input == "jr"){return 8;}
+    else if (input == "nor"){return 39;}
+    else if (input == "or"){return 37;}
+    else if (input == "sltu"){return 43;}
+    else if (input == "sll"){return 0;}
+    else if (input == "srl"){return 2;}
+    else if (input == "subu"){return 35;}
+    else {return 0;}
+}
+
+
+100001
+100100
+001000
+100111
+100101
+101011
+000000
+000010
+100011
+
+class Register{
+    public :
+        int number = 0;
+        string value="0";
+        Register(int num, string val) {number = num; value = val;};
+        Register(int num) {number = num;};
+        int get_number() {return number;}
+        string get_value() {return value;}
+};
+
+    //Register reg_0(0),reg_1(1),reg_2(2),reg_3(3),reg_4(4),reg_5(5),reg_6(6),reg_7(7),reg_8(8),reg_9(9),
+    //    reg_10(10),reg_11(11),reg_12(12),reg_13(13),reg_14(14),reg_15(15),reg_16(16),reg_17(17),reg_18(18),reg_19(19),
+    //    reg_20(20),reg_21(21),reg_22(22),reg_23(23),reg_24(24),reg_25(25),reg_26(26),reg_27(27),reg_28(28),reg_29(29),reg_30(30),reg_31(31);

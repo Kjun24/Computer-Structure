@@ -1,0 +1,11 @@
+if(data_section && str.find(".word")<str.length()){
+                if (str.find(":")<str.length()){ 
+                    if(data_vec.empty()){string data_name = str.substr(0,str.find(":"));
+                    cout<<data_name<<endl;
+                    data_vec.push_back(str.substr(str.find(".word")+8));}
+                    else {data_map[data_name] = data_vec; data_vec.clear();
+                    string data_name = str.substr(0,str.find(":"));
+                    data_vec.push_back(str.substr(str.find(".word")+8));}}
+                else {data_vec.push_back(str.substr(str.find(".word")+8));}
+                data_section_size++;
+                cout<<"data section size : "<<data_section_size<<endl;
